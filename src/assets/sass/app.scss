@@ -1,0 +1,134 @@
+.app {
+  padding: 20px;
+}
+.cart {
+  position: fixed;
+  right: 20px;
+  background-color: #666;
+  border-radius: 3px;
+  color: #fff;
+  &:hover {
+    background-color: darken(#666, 4);
+    cursor: pointer;
+  }
+  span {
+    margin-left: 10px;
+  }
+  > div {
+    padding: 10px;
+  }
+  &.open {
+    .cart-items {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.tools {
+  background-color: #efefef;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+  > div {
+    display: inline-block;
+    &:first-child {
+      margin-right: 40px;
+    }
+    label {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    select {
+      height: 25px;
+      width: 120px;
+      font-size: 14px;
+    }
+  }
+}
+
+.product-item {
+  width: 128px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border-radius: 3px;
+  background-color: #efefef;
+  h3 {
+    padding: 10px;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    padding: 10px;
+    color: green;
+  }
+  button {
+    font-size: 14px;
+    color: #fff;
+    background-color: teal;
+    width: 100%;
+    padding: 10px 0;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 0;
+    &:hover {
+      background-color: darken(teal, 4);
+      cursor: pointer;
+    }
+  }
+}
+.cart-items {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  right: 0;
+  top: 37px;
+  border-radius: 3px 0 3px 3px;
+  background-color: #efefef;
+  box-shadow: 3px 4px 5px #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  p {
+    color: #acacac;
+    text-align: center;
+  }
+  .cart-item {
+    clear: both;
+    margin-bottom: 10px;
+    overflow: hidden;
+    .picture {
+      width: 60px;
+      float: left;
+      img {
+        max-width: 100%;
+      }
+    }
+    .info {
+      width: 200px;
+      float: left;
+      margin-left: 10px;
+      h4 {
+        font-size: 14px;
+        color: #333;
+        margin: 0 0 5px 0;
+        text-align: left;
+        max-height: 34px;
+        overflow: hidden;
+      }
+      span {
+        color: green;
+        font-size: 12px;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+}

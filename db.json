@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "5c760c32edae27bec7e51a3c",
+      "index": 0,
+      "category": "cloth",
+      "price": 160,
+      "title": "Title 0",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c321a857767c7647d23",
+      "index": 1,
+      "category": "book",
+      "price": 63,
+      "title": "Title 1",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c32c6312700eff3f179",
+      "index": 2,
+      "category": "cloth",
+      "price": 152,
+      "title": "Title 2",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c32b0b25f65d0ee533d",
+      "index": 3,
+      "category": "cloth",
+      "price": 98,
+      "title": "Title 3",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c3205790660fd70943a",
+      "index": 4,
+      "category": "cloth",
+      "price": 175,
+      "title": "Title 4",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c32c5a159cbcab1cc36",
+      "index": 5,
+      "category": "cloth",
+      "price": 47,
+      "title": "Title 5",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c3278db913d078dd754",
+      "index": 6,
+      "category": "cloth",
+      "price": 55,
+      "title": "Title 6",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c32556056c395cfd98d",
+      "index": 7,
+      "category": "book",
+      "price": 160,
+      "title": "Title 7",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c3202c737ba158ab31a",
+      "index": 8,
+      "category": "book",
+      "price": 127,
+      "title": "Title 8",
+      "picture": "http://placekitten.com/g/128/128"
+    },
+    {
+      "id": "5c760c32d8dad45070e3f7f4",
+      "index": 9,
+      "category": "book",
+      "price": 111,
+      "title": "Title 9",
+      "picture": "http://placekitten.com/g/128/128"
+    }
+  ]
+}
