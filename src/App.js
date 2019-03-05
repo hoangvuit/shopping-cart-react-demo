@@ -6,22 +6,33 @@ import "./assets/sass/app.scss";
 
 class App extends Component {
   state = {
-    cartItems: []
+    cartItems: {},
+    total: 0
   };
-  addToCart = e => {
-    const item = e;
-    let { cartItems } = this.state;
-    cartItems.push(item);
-    this.setState(() => ({
-      cartItems
+  addToCart = item => {
+    let cartItems = { ...this.state.cartItems };
+    const id = item.id;
+    if (cartItems[id]) {
+      cartItems[id] = {
+        ...cartItems[id],
+        quantity: cartItems[id].quantity + 1
+      };
+    } else {
+      cartItems[id] = { ...item, quantity: 1 };
+    }
+
+    this.setState(state => ({
+      cartItems: cartItems,
+      total: state.total + 1
     }));
   };
 
   render() {
-    const { cartItems } = this.state;
+    const { cartItems, total } = this.state;
+    console.log(cartItems);
     return (
       <div className="app">
-        <Cart items={cartItems} />
+        <Cart items={cartItems} total={total} />
         <Homepage addToCart={this.addToCart} />
       </div>
     );

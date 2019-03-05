@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 const CategoryFilter = props => {
   return (
     <div className="category-filter">
@@ -24,22 +24,11 @@ const SortTool = props => {
   );
 };
 
-class Filters extends Component {
-  state = {};
-  onFilterChanged = e => {
-    this.props.onFilterChanged(e);
-  };
-  onSortChanged = e => {
-    this.props.onSortChanged(e);
-  };
-  render() {
-    return (
-      <div className="tools">
-        <CategoryFilter {...this.props} />
-        <SortTool {...this.props} />
-      </div>
-    );
-  }
-}
+const Filters = props => (
+  <div className="tools">
+    <CategoryFilter {...props} />
+    <SortTool {...props} />
+  </div>
+);
 
 export default Filters;

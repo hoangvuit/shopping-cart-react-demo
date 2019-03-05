@@ -2,7 +2,14 @@ import React, { Component } from "react";
 class ProductItem extends Component {
   state = {};
   addToCart = e => {
-    this.props.addToCart(this);
+    const { id, title, price, picture } = this.props;
+    let item = {
+      id,
+      title,
+      price,
+      picture
+    };
+    this.props.addToCart(item);
   };
   render() {
     const { title, price, picture } = this.props;

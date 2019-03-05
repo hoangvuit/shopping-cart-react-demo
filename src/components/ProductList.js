@@ -7,8 +7,8 @@ import axios from "axios";
 class ProductList extends Component {
   state = {
     products: [],
-    filterBy: this.props.filterBy || "all",
-    sort: "asc"
+    filterBy: this.props.filterBy,
+    sort: this.props.sort
   };
 
   componentDidMount() {
@@ -21,6 +21,7 @@ class ProductList extends Component {
     });
   }
 
+  // Refactor to use the latest getDerivedState
   componentWillReceiveProps(nextProps) {
     if (nextProps.filterBy) {
       this.setState(() => ({

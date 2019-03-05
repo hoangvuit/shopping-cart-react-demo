@@ -4,7 +4,8 @@ import ProductList from "../components/ProductList";
 
 class Homepage extends Component {
   state = {
-    filterBy: "all"
+    filterBy: "all",
+    sort: "asc"
   };
   onFilterChanged = e => {
     const filterBy = e.target.value;
@@ -26,7 +27,11 @@ class Homepage extends Component {
           onFilterChanged={this.onFilterChanged}
           onSortChanged={this.onSortChanged}
         />
-        <ProductList filterBy={filterBy} sort={sort} {...this.props} />
+        <ProductList
+          filterBy={filterBy}
+          sort={sort}
+          addToCart={this.props.addToCart}
+        />
       </>
     );
   }
