@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-class ProductItem extends Component {
+import React, { PureComponent } from "react";
+class ProductItem extends PureComponent {
   state = {};
   addToCart = e => {
     const { id, title, price, picture } = this.props;

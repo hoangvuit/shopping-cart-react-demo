@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Filters from "../components/Filters";
 import ProductList from "../components/ProductList";
+import ErrorBoundary from "../components/ErrorBoundary";
 
-class Homepage extends Component {
+class Homepage extends PureComponent {
   state = {
     filterBy: "all",
     sort: "asc"
@@ -27,11 +28,13 @@ class Homepage extends Component {
           onFilterChanged={this.onFilterChanged}
           onSortChanged={this.onSortChanged}
         />
-        <ProductList
-          filterBy={filterBy}
-          sort={sort}
-          addToCart={this.props.addToCart}
-        />
+        <ErrorBoundary>
+          <ProductList
+            filterBy={filterBy}
+            sort={sort}
+            addToCart={this.props.addToCart}
+          />
+        </ErrorBoundary>
       </>
     );
   }

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Homepage from "./views/Homepage";
 import Cart from "./components/Cart";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Header from "./components/Header";
+import Checkout from "./components/Checkout";
 
 import "./assets/sass/app.scss";
 
@@ -27,13 +30,23 @@ class App extends Component {
     }));
   };
 
+  onRouteChange;
+
   render() {
     const { cartItems, total } = this.state;
-    console.log(cartItems);
     return (
       <div className="app">
-        <Cart items={cartItems} total={total} />
-        <Homepage addToCart={this.addToCart} />
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Redirect from="/" to="/home" exact />
+            <Route path="/home" exact>
+              <Homepage addToCart={this.addToCart} />
+            </Route>
+            <Route path="/checkout" exact component={Checkout} />
+          </Switch>
+          <Cart items={cartItems} total={total} />
+        </BrowserRouter>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from "react";
-const CategoryFilter = props => {
+const CategoryFilter = React.memo(props => {
   return (
     <div className="category-filter">
       <label>Category</label>
@@ -10,9 +10,9 @@ const CategoryFilter = props => {
       </select>
     </div>
   );
-};
+});
 
-const SortTool = props => {
+const SortTool = React.memo(props => {
   return (
     <div className="sort-tool">
       <label>Sort by Price</label>
@@ -22,7 +22,7 @@ const SortTool = props => {
       </select>
     </div>
   );
-};
+});
 
 const Filters = props => (
   <div className="tools">

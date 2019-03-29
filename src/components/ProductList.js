@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import ProductItem from "../components/ProductItem";
 import { ArrayUtils } from "../utils";
 
 import axios from "axios";
 
-class ProductList extends Component {
+class ProductList extends PureComponent {
   state = {
     products: [],
     filterBy: this.props.filterBy,
@@ -45,7 +45,6 @@ class ProductList extends Component {
     } else {
       sortedProducts = ArrayUtils.sortAsc(sortedProducts, "price");
     }
-
     return (
       <div className="product-list">
         {sortedProducts.map(product => (

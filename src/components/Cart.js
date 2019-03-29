@@ -16,10 +16,13 @@ const CartItem = props => (
 );
 
 class Cart extends Component {
-  state = {
-    items: [],
-    open: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      open: false
+    };
+  }
   toggle = () => {
     this.setState(({ open }) => ({
       open: !open
@@ -54,7 +57,7 @@ class Cart extends Component {
           <FontAwesomeIcon icon={faShoppingCart} />
           <span>Cart ({total})</span>
         </div>
-        {open && (
+        {open && total > 0 && (
           <div className="cart-items">
             {Object.keys(items).map(key => (
               <CartItem {...items[key]} key={key} />
