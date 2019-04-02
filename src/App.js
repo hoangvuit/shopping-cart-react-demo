@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Checkout from "./components/Checkout";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 import "./assets/sass/app.scss";
 
@@ -38,14 +39,18 @@ class App extends Component {
       <div className="app">
         <BrowserRouter>
           <Header />
-          <Switch>
-            <Redirect from="/" to="/home" exact />
-            <Route path="/home" exact>
-              <Homepage addToCart={this.addToCart} />
-            </Route>
-            <Route path="/checkout" exact component={Checkout} />
-          </Switch>
-          <Cart items={cartItems} total={total} />
+          <div className="main-content">
+            <Switch>
+              <Redirect from="/" to="/home" exact />
+              <Route path="/home" exact>
+                <Homepage addToCart={this.addToCart} />
+              </Route>
+              <Route path="/checkout" exact component={Checkout} />
+            </Switch>
+          </div>
+          <ErrorBoundary>
+            <Cart items={cartItems} total={total} />
+          </ErrorBoundary>
         </BrowserRouter>
       </div>
     );

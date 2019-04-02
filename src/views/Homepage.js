@@ -24,11 +24,11 @@ class Homepage extends PureComponent {
     const { filterBy, sort } = this.state;
     return (
       <>
-        <Filters
-          onFilterChanged={this.onFilterChanged}
-          onSortChanged={this.onSortChanged}
-        />
         <ErrorBoundary>
+          <Filters
+            onFilterChanged={this.onFilterChanged}
+            onSortChanged={this.onSortChanged}
+          />
           <ProductList
             filterBy={filterBy}
             sort={sort}
